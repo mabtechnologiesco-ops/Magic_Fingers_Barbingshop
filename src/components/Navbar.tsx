@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Menu, X, Phone } from 'lucide-react';
-import logoImage from '../../images/Logo 1.jpeg';
+import logoImage from '../../images/MGF_logo_transparent 2.png';
 import { business } from '@/data/business';
 import { useScrolled } from '@/hooks/useReveal';
 
