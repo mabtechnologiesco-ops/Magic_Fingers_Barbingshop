@@ -1,9 +1,11 @@
 services:
   - type: web
     name: magic-fingers-barbershop
-    env: static
-    buildCommand: npm install && npm run build
-    staticPublishPath: dist
+    runtime: static
+    branch: main
+    autoDeployTrigger: commit
+    buildCommand: npm ci && npm run build
+    staticPublishPath: ./dist
     routes:
       - type: rewrite
         source: /*
