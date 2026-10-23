@@ -13,6 +13,15 @@ export function useReveal<T extends HTMLElement = HTMLDivElement>() {
 
     const items = Array.from(root.querySelectorAll<HTMLElement>('.reveal'));
 
+    // Fallback: ensure content is never stuck invisible if the observer
+    // fails to fire (e.g. on some hosting/CDN setups or slow loads).
+    const revealAll = () => items.forEach((item) => item.classList.add('is-visible'));
+
+    if (typeof IntersectionObserver === 'undefined') {
+      revealAll();
+      return;
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -26,7 +35,15 @@ export function useReveal<T extends HTMLElement = HTMLDivElement>() {
     );
 
     items.forEach((item) => observer.observe(item));
-    return () => observer.disconnect();
+
+    // Safety net: reveal everything after a short delay so the page is
+    // never left blank/invisible.
+    const fallback = window.setTimeout(revealAll, 1200);
+
+    return () => {
+      observer.disconnect();
+      window.clearTimeout(fallback);
+    };
   }, []);
 
   return ref;

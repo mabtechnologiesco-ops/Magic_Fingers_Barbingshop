@@ -1,4 +1,5 @@
 import { Scissors, Wind, Sparkles, ArrowRight, Phone } from 'lucide-react';
+import { useReveal } from '@/hooks/useReveal';
 import heroImage from '../../images/Hero Image.jpeg';
 
 const highlights = [
@@ -8,8 +9,10 @@ const highlights = [
 ];
 
 export default function Hero() {
+  const ref = useReveal<HTMLElement>();
+
   return (
-    <section id="home" className="relative flex min-h-screen items-center overflow-hidden">
+    <section id="home" ref={ref} className="relative flex min-h-screen items-center overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0">
         <img
