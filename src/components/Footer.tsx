@@ -126,12 +126,12 @@ export default function Footer() {
           <p className="text-xs text-zinc-500">
             Crafted by{' '}
             <a
-              href="https://www.mabtechnologies.sl"
+              href="https://mab-technologies-new.onrender.com"
               target="_blank"
               rel="noopener noreferrer"
               className="font-medium text-zinc-400 transition-colors hover:text-gold"
             >
-              MAB Technologies SL
+              MAB TECHNOLOGIES SL
             </a>
           </p>
         </div>
