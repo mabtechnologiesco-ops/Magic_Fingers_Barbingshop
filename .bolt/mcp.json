@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "sentry": {
+      "enabled": true
+    },
+    "shaders": {
+      "enabled": true
+    }
+  }
+}
