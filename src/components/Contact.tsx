@@ -164,6 +164,18 @@ export default function Contact() {
             </form>
           </div>
         </div>
+
+        {/* Map */}
+        <div className="reveal mt-10 overflow-hidden rounded-2xl border border-white/8">
+          <iframe
+            title={`Map to ${business.name}`}
+            src={`https://www.google.com/maps?q=${encodeURIComponent(business.mapsQuery)}&output=embed`}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="h-[360px] w-full border-0 sm:h-[420px]"
+            allowFullScreen
+          />
+        </div>
       </div>
     </section>
   );

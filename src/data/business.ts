@@ -40,7 +40,7 @@ export const business = {
   facebook: 'https://facebook.com/magicfingersbarbershop',
   email: 'hello@magicfingersbarbershop.com',
   currency: 'Le',
-  mapsQuery: 'Freetown, Sierra Leone',
+  mapsQuery: 'Upper Savage Square, Freetown, Sierra Leone',
   hours: [
     { day: 'Monday', time: '8:00 AM – 8:00 PM' },
     { day: 'Tuesday', time: '8:00 AM – 8:00 PM' },
